@@ -1,0 +1,70 @@
+<?php
+    include('./Views/Admin/Common/header.html');
+?>
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="/jscss/admin/design/">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="/jscss/admin/design/">订单管理</a><span class="crumb-step">&gt;</span><span>修改订单</span></div>
+        </div>
+        <div class="result-wrap">
+            <div class="result-content">
+                <form action="index.php?m=admin&c=orders&a=store&oid=<?=$order->oid?>" method="post" id="myform" name="myform" enctype="multipart/form-data">
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                        <tr>
+                            <th width="120">订单状态：</th>
+                            <td>
+                                <select name="status" id="catid" class="required">
+                                    <option <?=($order->status==1)?'selected':''?> value="1">已下单未发货</option>
+                                    <option <?=($order->status==2)?'selected':''?> value="2">已发货</option>
+                                    <option <?=($order->status==3)?'selected':''?> value="3">确认收货</option>
+                                </select>
+                            </td>
+                        </tr>
+                            <tr>
+                                <th>订单号：</th>
+                                <td>
+                                    <?=$order->oid?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>下单时间：</th>
+                                <td>
+                                    <?=date('Y-m-d H:i:s',$order->otime)?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>收货人：</th>
+                                <td><input class="common-text" name="rec" size="50" value="<?=$order->rec?>" type="text"></td>
+                            </tr>
+                            <tr>
+                                <th>收货地址：</th>
+                                <td><input class="common-text" name="addr" size="50" value="<?=$order->addr?>" type="text"></td>
+                            </tr>
+  
+                            <tr>
+                                <th>电话：</th>
+                                <td><input class="common-text" name="tel" size="50" value="<?=$order->tel?>" type="text"></td>
+                            </tr>
+                            <tr>
+                                <th>留言内容：</th>
+                                <td><textarea name="umsg" class="common-textarea" id="content" cols="30" style="width: 98%;" rows="10"><?=$order->umsg?></textarea></td>
+                            </tr>
+                            
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10" value="确认修改" type="submit">
+                                    <input class="btn btn6" onclick="history.go(-1)" value="返回" type="button">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

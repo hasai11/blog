@@ -1,0 +1,111 @@
+﻿@charset "utf-8";
+/*■■■■■■■■　共同设定 ■■■■■■■■*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,table,tr,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:normal;}
+ul,ul li,input, dl, dd {  padding:0; margin:0; list-style-type:none;}
+img,a img{border:0;margin:0;padding:0;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+a{text-decoration:none; color:#444;/*-moz-transition: all 0.5s;-webkit-transition:all 0.5s;-o-transition:all 0.5s;transition:all 0.5s;*/}
+a:hover{text-decoration:none; }
+.clear{clear:both;}
+*{ font-family:"Microsoft YaHei"; }
+/* HTY Common Atom*/
+.clear{background:none;border:0;clear:both;display:block;float:none;font-size:0;overflow:hidden;visibility:hidden;width:0;height:0;}
+.clear-fix:after{content:"."; display:block; height:0; font-size:0; clear:both; visibility:hidden;}
+.fl{float:left;}
+.fr{float:right;}
+.c_b{clear:both;}
+textarea{resize:none; overflow:auto;}
+/*■■■■■■■■　基本设定　■■■■■■■■*/
+body{font-size:14px; color:#535353; overflow-x:hidden; margin:0 auto;}
+.theme_color{background:#e3232d;}
+.theme_color1{background:#ee0062;}
+.theme_color2{background:#222;}
+.wl_1004{width:1004px; margin:0 auto; position:relative;}
+/*-----------------  ■ common -------------------*/
+.rollover:hover img{opacity:0.7; filter:alpha(opacity=70); -ms-filter:"alpha(opacity=70)"; -khtml-opacity:0.7; zoom:1;}
+.main{width:1004px; margin:0 auto; position:relative;}
+/*-----------------  ■ header -------------------*/
+.header{width:100%; height:80px; background-color:#e2222c;padding-top: 36px;position: relative;z-index: 999999}
+.header .main{width:1004px; margin:0 auto;}
+.header .logo{float:left;}
+.header .tel{float:right;font-size:14px; color:#aaa;width: 230px;margin-left: 5px;}
+.tel .title{float:right;background: #3f3f3f;color: #fff;padding: 0 3px;}
+.header .tel div.num{font-size:26px; color:#fff; float: right;}
+.header .share_b{float:right; margin-top:17px;}
+/*------search-------*/
+.search01{margin-top: 13px;float:right; width:240px; height:29px;background-color:#fff;}
+.search03{width:80px; font-size:12px; color:#333; height:29px; line-height:29px; padding-left:15px; border:none; outline:none; 
+	float:left;border-left:1px solid #cacaca;}
+.seabtn{width:50px; height:29px; float:right; background-image:url(../images/index_icon02.gif); border:none; background-repeat:no-repeat; 
+	background-position:center; outline:none; background-color:#fff; cursor:pointer;}
+.search05{float:left; width:74px; height:30px; line-height:30px; background-image:url(../images/index_icon01.gif); background-repeat:no-repeat; background-position:59px 13px;}
+
+.jslct{color:#333;display:inline-block; zoom:1; font-size:12px; position:relative; cursor:default; line-height:30px;width: 74px;}
+.jslct div.jslct_t {position:relative; padding-left:5px;z-index:2;*display:block!important;*display:inline;zoom:1;}
+.jslct em {font-style:normal; display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; color:#969696;}
+.jslct dl, .jslct dl dd {padding:0;margin:0;list-style:none}
+.jslct dl {background:#e2222c;position:absolute;top:32px;left:0;cursor:default; width:80px; padding:0 2px 8px ; overflow:hidden;z-index:1;display:none; font-size:12px;}
+.jslct dl dd { box-sizing:border-box; font-size:12px; text-align:center;line-height:25px; border-/bottom:#ccc solid 1px; white-space:nowrap;cursor:pointer;-moz-transition: all 0.5s;-webkit-transition:all 0.5s;-o-transition:all 0.5s;transition:all 0.5s; color:#fff;}
+.jslct dl dd:hover {color:#fff; background:#ce212a;}
+.jslct dl dd.hover {color:#fff; background:#ce212a;}
+/*********nav*********/
+.g_nav{height:46px;line-height: 46px; width:100%; position:relative; background-color:#e2222c;border-top: 1px solid #ff6767;z-index: 99999;float: left;}
+.g_nav01{width:1004px; margin:0 auto;}
+.g_nav01 table{float:left; width:100%;}
+.g_nav01 table tr td{text-align:center; height:56px;  position:relative; width:91px;}
+.g_nav01 a{display:block; color:#fff; font-size:14px; position:relative;height: 56px;float: left;width: 100%;}
+.g_nav01 a.cur,.g_nav01 td.now a, .g_nav01 td a:hover{background-color:#0dab67;color: #e2222c;
+ background:url(../images/navhover.png) center bottom no-repeat;font-weight: bold;}
+.g_nav01 a.now div{width:65px; height:3px; background-color:#fff; position:absolute; top:25px;}
+.g_nav01 a span{font-size:12px; color:#baa58c;}
+.g_nav01 table tr td .nav_tan{ display:none; width:100%; position:absolute; left:0; top:40px; padding:5px 0 10px 0; z-index:100;}
+.g_nav01 table tr td .nav_tan a{ width:100%; margin:0 auto;color: #e2222c; line-height:30px; height:30px;overflow: hidden;
+ font-size:12px;background: #fff;float: none;font-weight: normal;}
+/*********footer*********/
+.t_linkb{background: #f31b2c;line-height: 46px;height: 46px;width: 100%;float: left;}
+.t_linkb a{float: left;padding: 0 18px;color: #fff;}
+.t_linkb a:hover{color: #f3d57f}
+.footer{height:134px;padding-top: 30px; width:100%;float: left; background-color:#313131;color: #fff;}
+.footer a{color: #fff !important;}
+.foottel{font-size: 20px;margin-bottom: 24px;padding-left: 56px;width: 388px;float: left;background:url(../images/foottel.png) center left no-repeat;line-height: 40px;height: 40px;}
+.footr{float: right;width: 517px;font-size: 14px;line-height: 47px;}
+.footsite{background:url(../images/site.png) center left no-repeat;width: 183px;padding-left: 66px;float: left;}
+.footqq{background:url(../images/qq.png) center left no-repeat;width: 73px;padding-left:57px;float: left;}
+.footshare{float: right;width: 118px;}
+.footer .bdshare-button-style0-16 a, .footer .bdshare-button-style0-16 .bds_more{font-size: 14px;line-height: 47px;height: 47px;margin: 0;background:url(../images/share.png) center left no-repeat;padding-left: 60px;}
+.fri_link{border-top: 1px solid #696969;border-bottom: 1px solid #696969;float: left;width: 100%;height: 39px;line-height: 39px;}
+.manager_info{line-height:40px;color:#fff;background: #3f3f3f;width: 100%;float: left;}
+.manager_info a{color:#fff;}
+.manager_info span+span{padding-left:20px;}
+
+.wl{width:1004px; margin:0 auto; position:relative;}
+.pl_20{padding-left:20px;}
+/*首页头部banner*/
+.banner{height:509px; width:100%; overflow:hidden; position:relative; max-width:1600px; margin:0 auto;
+	margin-top: -10px;padding-bottom: 179px;background:url(../images/banbg.jpg) no-repeat bottom center;}
+.banner>ul{width:auto; height:100%;}
+.banner>ul li{height:100%;background-position:center center; float:left; opacity:0; background-repeat:no-repeat;}
+.banner .prev{display: none;width:42px; height:105px; position:absolute; left:0; top:187px; background-image:url(../images/index_icon02.png); cursor:pointer;}
+.banner .next{display: none;width:42px; height:105px; position:absolute; right:0; top:187px; background-image:url(../images/index_icon03.png); cursor:pointer;}
+.banner .ctrl{position:absolute; z-index:99; bottom:28px; right:0;}
+.banner .ctrl div{width:16px; height:16px; float:left; background-color:#fff; border-radius:100%; margin-left:12px; cursor:pointer;}
+.banner .ctrl div.now{background-color:#fb0509; position:relative;}
+.notice{background: #474747;line-height: 44px;width: 100%;float: left;}
+.notice span{background:url(../images/notice.gif) no-repeat left center;padding-left: 145px;float: left;color: #fff;}
+
+
+/*---------右边悬浮------------------------------*/
+.side_nav{position: fixed;top: 50%;right: 0;width: 60px; z-index:999}
+.side_nav ul li{position: relative;width: 60px;height: 59px;float: right; border-bottom: 1px solid #5a5a5a; }
+.side_nav ul li a{display:inline-block;height: 59px;position: absolute;top: 0;left: 0;}
+
+.side_nav ul li span{float: left;color:#fff;line-height: 60px;font-size: 16px;margin-left: 60px;cursor: pointer;}
+.side_nav_3 a{width: 60px;}
+.side_nav_3 a span{height:128px;position: absolute;right: 60px;bottom: 0px;margin-left: 0!important;display: none;}
+.side_nav_3 a{background: url(../images/side.gif) no-repeat left 0;}
+.back_top a{background: url(../images/side.gif) no-repeat left bottom;}
+

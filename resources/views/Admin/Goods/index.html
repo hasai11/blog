@@ -1,0 +1,111 @@
+<?php
+
+    include('./Views/Admin/Common/header.html');
+?>
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="index.html">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">商品管理</span></div>
+        </div>
+        <div class="search-wrap">
+            <div class="search-content">
+                <form action="./index.php" method="get">
+                    <input type="hidden" name="m" value="admin">
+                    <input type="hidden" name="c" value="goods">
+                    <input type="hidden" name="a" value="index">
+                    <table class="search-tab">
+                        <tr>
+                            <th width="100">选择分类:</th>
+                            <td>
+                                <select name="cid" id="">
+                                    <option value="">全部</option>
+                                    <?php foreach ($cates as $k => $v) {
+                                        $n = substr_count($v->path, ',') - 1;
+                                        if ($n<0) {$n=0; }
+                                        echo "<option value='{$v->cid}'>".str_repeat('&nbsp;', $n * 4)."|--{$v->cname}</option>";
+                                    }
+
+                                    ?>
+                                </select>
+                            </td>
+                            <th width="60">商品名称:</th>
+                            <td><input class="common-text" placeholder="关键字" name="gname" value="" id="" type="text">
+                            </td>
+                            <th width="60">价格区间:</th>
+                            <td>
+                                <input class="common-text" placeholder="最低价格" name="minprice" value="" id="" type="text">~
+                                <input class="common-text" placeholder="最高价格" name="maxprice" value="" id="" type="text">
+                            </td>
+                            <td><input class="btn btn-primary btn2" name="sub" value="查询" type="submit"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="result-wrap">
+            <form name="myform" id="myform" method="post">
+                <div class="result-title">
+                    <div class="result-list">
+                        <a href="insert.html"><i class="icon-font"></i>新增作品</a>
+                        <a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i>批量删除</a>
+                        <a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a>
+                    </div>
+                </div>
+                <div class="result-content">
+                    <table class="result-tab" width="100%">
+                        <tr>
+                            <th>商品ID</th>
+                            <th width="500">商品名称</th>
+                            <th>商品图片</th>
+                            <th>类别</th>
+                            <th>定价</th>
+                            <th>库存</th>
+                            <th>销量</th>
+                            <th>状态</th>
+                            <th>操作</th>
+
+                        </tr>
+                        <?php foreach ($goods as $k => $v):?>
+                        <tr>
+                            <td><?=$v->gid?></td>
+                            <td><?=$v->gname?></td>
+                            <td align="center"><img src="<?=SAVEPATH.'sm_'.$v->gpic?>"></td>
+                            <td><?=$arr_cates[$v->cid]?></td>
+                            <td><?=$v->price?></td>
+                            <td><?=$v->stock?></td>
+                            <td><?=$v->salecnt?></td>
+                            <td><?php
+                                if ($v->status==1) {
+                                    echo '新品';
+                                }elseif ($v->status==2) {
+                                    echo '上架';
+                                }elseif ($v->status==3) {
+                                    echo '下架';
+                                }
+                            ?></td>
+                            <td>
+                                <a class="link-update" href="./index.php?m=admin&c=goods&a=edit&gid=<?=$v->gid.$tj?>">修改</a>
+                                <a class="link-update" onclick="return confirm('您确认要删除吗?');" href="./index.php?m=admin&c=goods&a=destroy&gid=<?=$v->gid.$tj?>">删除</a>
+                                <?php if (($v->status==1)||($v->status==3)):?>
+                                <a class="link-update" href="./index.php?m=admin&c=goods&a=up&gid=<?=$v->gid.$tj?>">上架</a>
+                                 <?php else:?>
+                                <a class="link-update" href="./index.php?m=admin&c=goods&a=down&gid=<?=$v->gid.$tj?>">下架</a>
+                                <?php endif;?>
+                            </td>
+                        </tr>
+                        <?php endforeach;?>
+                    </table>
+                    <div class="list-page"> <?=$cnt?> 条 <?=$nowPage?>/<?=$maxPage?> 页
+                        <a href="<?=$query_string?>&page=1">首页</a>
+                        <a href="<?=$query_string?>&page=<?=$prevPage?>">上一页</a>
+                        <a href="<?=$query_string?>&page=<?=$nextPage?>">下一页</a>
+                        <a href="<?=$query_string?>&page=<?=$maxPage?>">尾页</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

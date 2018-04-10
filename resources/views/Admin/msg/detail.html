@@ -1,0 +1,49 @@
+<?php
+    include('./Views/Admin/Common/header.html');
+?>
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="index.html">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">订单详情</span></div>
+        </div>
+        <div class="search-wrap">
+        </div>
+        <div class="result-wrap">
+            <form name="myform" id="myform" method="post">
+                <div class="result-title">
+                    <div class="result-list">
+                        <a href=""><i class="icon-font"></i>新增作品</a>
+                        <a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i>批量删除</a>
+                        <a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a>
+                    </div>
+                </div>
+                <div class="result-content">
+                    <table class="result-tab" width="100%">
+                        <tr>
+                            <th width="450">商品名称</th>
+                            <th>商品图片</th>
+                            <th>购买单价</th>
+                            <th>购买数量</th>
+                            <th>小计</th>
+                        </tr>
+                        <?php foreach ($order as $k => $v):?>
+                        <tr>
+                            <td><?=$v->gname?></td>
+                            <td align="center"><img src="<?=SAVEPATH.'sm_'.$v->gpic;?>"></td>
+                            <td><?=$v->bprice?></td>
+                            <td><?=$v->bcnt;?></td>
+                            <td><?=$v->bcnt * $v->bprice?></td>
+                        </tr>
+                    <?php endforeach;?>
+                    
+                    </table>
+
+                </div>
+                <input class="btn" onclick="history.go(-1)" value="返回" type="button">
+            </form>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>
