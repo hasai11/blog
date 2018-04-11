@@ -21,7 +21,7 @@ Route::get('code/captcha/{id}','Admin\LoginController@captcha');
 Route::post('admin/dologin','Admin\LoginController@doLogin');
 
 
-Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'login'],function(){
+Route::group(['prefix'=>'admin','namespace'=>'Admin'/*,'middleware'=>'login'*/],function(){
 
 //后台首页
     Route::get('index','IndexController@index');
