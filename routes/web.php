@@ -11,9 +11,7 @@
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
+Route::get('/', 'Admin\IndexController@index');
 
 
 Route::get('/admin/login','Admin\LoginController@index');
@@ -26,6 +24,16 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'/*,'middleware'=>'login'*/],
 //后台首页
     Route::get('index','IndexController@index');
 
+//分类资源路由
+    Route::resource('cate','CateController');
+
+//添加子分类路由
+    Route::get('cate/create/{id}','CateController@create');
+//重置密码
+    Route::get('resetpass/{id}','ResetpassController@index');
+    Route::post('dorepass','ResetpassController@dorepass');
+    Route::get('index/logout','ResetpassController@index');
+
 //退出登录
-    Route::get('logout','IndexController@logout');
+    Route::get('/index/logout','IndexController@logout');
 });

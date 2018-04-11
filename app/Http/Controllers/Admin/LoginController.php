@@ -88,5 +88,12 @@ class LoginController extends Controller
          Session::put('user',$user);
         return redirect('admin/index');
     }
+    //退出登录
+    public function logout()
+    {
+        session()->forget('user');
+
+        return redirect('admin/login');
+    }
 
 }
