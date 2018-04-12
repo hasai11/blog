@@ -80,6 +80,7 @@ class LoginController extends Controller
             return redirect('admin/login')->withErrors($validator)->withInput();
         }
         //  5. 判断密码是否正确（
+        // dd(Crypt::encrypt($input['password']));
           if($input['password'] != Crypt::decrypt($user->upass)) {
              $validator->errors()->add('password', '密码输入错误!');
               return redirect('admin/login')->withErrors($validator)->withInput();

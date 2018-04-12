@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\User;
-use Decrypt;
+use Crypt;
 class ResetpassController extends Controller
 {
     public function index($id)
@@ -17,14 +17,14 @@ class ResetpassController extends Controller
     {
     	$input = $request->except('_token');
     	$user = User::find($input['id']);
-    	$pass = decrypt($user->upass);
+    	$pass = Crypt::decrypt($user->upass);
     	if ($input['upass'] !== $pass ) {
     		return back()->with('message','当前密码输入错误');
     	}
     	if ($input['npass'] !== $input['rnpass'] ) {
     		return back()->with('message','新密码两次输入不一致');
     	}
-    	$user->upass = encrypt($input['npass']);
+    	$user->upass = Crypt::encrypt($input['npass']);
     	$res =  $user->save();
     	if ($res) {
     		return redirect('admin/index')->with('message','修改成功');

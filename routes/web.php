@@ -29,6 +29,10 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'/*,'middleware'=>'login'*/],
 
 //添加子分类路由
     Route::get('cate/create/{id}','CateController@create');
+
+//产品资源路由
+    Route::resource('goods','GoodsController');
+
 //重置密码
     Route::get('resetpass/{id}','ResetpassController@index');
     Route::post('dorepass','ResetpassController@dorepass');

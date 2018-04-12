@@ -51,8 +51,8 @@
                 <li>
                     <a href="#"><i class="icon-font">&#xe048;</i>产品管理</a>
                     <ul class="sub-menu">
-                        <li><a href="design.html"><i class="icon-font">&#xe005;</i>产品列表</a></li>
-                        <li><a href="design.html"><i class="icon-font">&#xe008;</i>添加产品</a></li>
+                        <li><a href="/admin/goods"><i class="icon-font">&#xe005;</i>产品列表</a></li>
+                        <li><a href="/admin/goods/create"><i class="icon-font">&#xe008;</i>添加产品</a></li>
                         
                     </ul>
                 </li>
